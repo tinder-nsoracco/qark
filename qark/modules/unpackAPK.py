@@ -48,7 +48,7 @@ def unpack():
         dirname, extension = common.apkPath.rsplit(".", 1)
         # workaround for cases where path may include whitespace
         file_temp = open(common.apkPath, 'r')
-        zf = zipfile.ZipFile(file_temp)
+        zf = zipfile.ZipFile(filename=file_temp)
         logger.info('Zipfile: %s', zf)
         for filename in [zf.namelist()]:
             if not os.path.exists(dirname + "/"):
